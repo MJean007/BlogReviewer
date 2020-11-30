@@ -2,6 +2,29 @@
 @{
     ViewData["Title"] = "AddCategory";
 }
+@model BlogEngine.Models.category
 
-<h1>AddCategory</h1>
+<h1>Add Category</h1>
 
+<hr>
+<div class="container">
+
+    <div class="row">
+        <div class="col-xs-6">
+            <label class="header">title</label>
+        </div>
+        <div class="col-xs-6">
+            <input type="submit" value="Import" />
+        </div>
+
+    </div>
+    @using (Html.BeginForm("", "Category", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+    {
+
+        @Html.LabelFor(model => model.title, new { @class = "control-label col-xs-6" })
+        @Html.TextBoxFor(model => model.title, new { @class = "control-label col-xs-6" })
+        <br/>
+        <input type="submit" value="Add" name="Save" />
+    };
+
+</div>

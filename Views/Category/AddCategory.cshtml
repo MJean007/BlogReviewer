@@ -8,23 +8,27 @@
 
 <hr>
 <div class="container">
-
-    <div class="row">
-        <div class="col-xs-6">
-            <label class="header">title</label>
-        </div>
-        <div class="col-xs-6">
-            <input type="submit" value="Import" />
-        </div>
-
-    </div>
     @using (Html.BeginForm("", "Category", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
     {
+        <div class="row">
+            <div class="col-xs-6">
+                @Html.LabelFor(model => model.title)
+            </div>
+            <div class="col-xs-6">
+                @Html.TextBoxFor(model => model.title)
+            </div>
+        </div>
+<div class="row">
+    <div class="col-xs-4">
+        <input type="submit" value="Save" name="Save" />
+    </div>
+    <div class="col-xs-8">
+        &nbsp;
+    </div>
+</div>
 
-        @Html.LabelFor(model => model.title, new { @class = "control-label col-xs-6" })
-        @Html.TextBoxFor(model => model.title, new { @class = "control-label col-xs-6" })
-        <br/>
-        <input type="submit" value="Add" name="Save" />
+      
+    
     };
 
 </div>
